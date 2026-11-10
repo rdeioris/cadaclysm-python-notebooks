@@ -1,0 +1,16 @@
+cadaclysm Python notebook
+Copyright 2026 Blitter S.r.l. and Roberto De Ioris
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It uses Pyodide (MPL-2.0), CPython (PSF License), numpy (BSD-3-Clause), CodeMirror and
+Lezer (MIT), and the Quantico font (SIL Open Font License 1.1), under their own licences
+(see THIRD-PARTY.txt and font/OFL.txt). `npm run setup` and `npm run build` fetch and bundle
+them; only the font is committed here.
+
+It runs on the cadaclysm web package and the cadaclysm SDK's Python module, which
+`npm run setup` fetches into pkg/ and sdk/. The web package is not part of this product, is
+not covered by the Apache License, and has its own licence:
+https://cadaclysm.blitter.studio/license
+
+The cadaclysm name and logo are not covered by the Apache License.

@@ -1,0 +1,13 @@
+node_modules/
+# What npm run setup fetches: the cadaclysm web package, the SDK's Python module, Pyodide.
+pkg/
+pkg.next/
+sdk/
+sdk.next/
+pyodide/
+# What npm run build bundles (CodeMirror).
+vendor/
+# A license of your own.
+*.lic
+# What the headless check writes (test/browser.mjs --out).
+test/out/
