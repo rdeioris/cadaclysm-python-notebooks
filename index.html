@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python notebook — Cadaclysm</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="chrome.css">
+<link rel="stylesheet" href="notebook.css">
+<style>
+/* A compact header: the mark, the name, the links. */
+header.app { display: flex; gap: 20px; align-items: center; padding-block: 12px; }
+header.app h1 { display: flex; align-items: center; gap: 10px; margin: 0 auto 0 0; font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: 0.06em; text-transform: uppercase; }
+header.app h1 img { width: 30px; height: 30px; }
+header.app h1 span { color: var(--muted); }
+header.app a { color: var(--muted); text-decoration: none; }
+header.app a:hover { color: var(--fg); text-decoration: underline; }
+.credits { margin-bottom: 40px; }
+</style>
+</head>
+<body>
+<header class="wrap app">
+  <h1><img src="mark-dark.svg" alt="" width="30" height="30">cadaclysm <span>Python notebook</span></h1>
+  <a href="https://github.com/rdeioris/cadaclysm-sdk">SDK</a>
+  <a href="https://cadaclysm.blitter.studio/">cadaclysm.blitter.studio</a>
+</header>
+<main class="wrap">
+  <div class="head">
+    <div>
+      <span class="eyebrow">Try the SDK</span>
+      <h2>Blacksmith in Python</h2>
+      <p>The same <code>cadaclysm_blacksmith</code> module the SDK ships, running in your browser. Shift+Enter runs a cell, Tab completes from the live kernel; the last expression, if it is a solid, a profile or an assembly, is drawn, and so is anything passed to <code>show()</code>; a profile is drawn as its outline, on the XY plane, and an assembly as everything placed in it, each part at its placement. A last expression that is a list or tuple of them draws them all in one view, as <code>show(*items)</code> would. A <code>Job</code> plays: <code>show(job, part=part)</code>, or a cell that ends in one, cuts its stock on a timeline under the cell -- play, speed, loop, a scrubber in time, a step per move, and the stock coloured by height, by tool or (with <code>part</code>) by how far it is from the part. <code>solid.coloured("#c8a060")</code> is the solid coloured, <code>solid.coloured(colour, face=i)</code> one face of it, and what is made from it keeps the colours. <b>Save document</b> writes every solid, sheet and profile the views show -- the last run of each cell, in cell order, each under its <code>show(..., part="name")</code> or its variable's name -- as a blacksmith document (<code>.json</code>), the one format every cadaclysm app opens; <code>notebook_support.document()</code> is the same <code>Document</code> in a cell, and <b>Open a file…</b> takes a document back, drawing its results. Copy the script and it runs unchanged next to the library. The menu holds more notebooks: sweeps and coils, revolves and lofts, shells, booleans, frames, and a SubD cage fired into a solid.</p>
+    </div>
+    <div class="toolbar">
+      <span id="kernel"><span class="dot"></span><span id="kernel-text">loading…</span></span>
+      <button class="tb primary" id="run-all" disabled>▶ Run all</button>
+      <select class="tb" id="example" title="An example notebook: its cells replace these, and run"></select>
+      <button class="tb" id="add">+ Cell</button>
+      <button class="tb" id="open" title="A STEP, SAT, 3DM, BREP, IGES or IFC file of your own, or a blacksmith document (.json), read in this page -- nothing is uploaded">Open a file…</button>
+      <button class="tb" id="save-document" title="Every solid, sheet and profile the views show -- the last run of each cell, in cell order -- as a blacksmith document (.json), each under its name" disabled>Save document</button>
+      <button class="tb" id="copy">Copy as script</button>
+      <button class="tb danger" id="restart">Restart</button>
+      <label class="tb" title="Draw every cell's solids as triangles instead of exact surfaces"><input type="checkbox" id="triangles"> triangles</label>
+    </div>
+  </div>
+  <p id="unsupported">This page needs WebGL2 or WebGPU, OffscreenCanvas, module workers and WebAssembly. <a href="https://cadaclysm.blitter.studio/mobile_demo/" target="_blank" rel="noopener">The viewer</a> may still work here.</p>
+  <div id="cells"></div>
+  <div class="add"><button class="tb" id="add-end">+ add a cell</button></div>
+  <div class="credits">
+    <span>python runs in a worker in your browser · nothing is uploaded</span>
+    <span id="versions"></span>
+    <span>Python by Pyodide (MPL-2.0), numpy (BSD-3-Clause), editor by CodeMirror (MIT) · <a href="THIRD-PARTY.txt">third-party licenses</a></span>
+  </div>
+</main>
+<script type="module" src="notebook.js"></script>
+</body>
+</html>
