@@ -109,16 +109,14 @@ npm run build
   licence texts.
 
 The notebook needs the `View` class and its page modules, and the Pyodide side of
-`cadaclysm_blacksmith.py`. The SDK has them from 0.14 on.
+`cadaclysm_blacksmith.py`. The SDK has them from 0.14 on. Copies you already have work too:
 
-> **TODO(0.14):** 0.14 is not released yet. Until it is, set up from copies you already have:
->
-> ```bash
-> npm run setup -- --zip path/to/cadaclysm-0.14.0-web.zip --sdk path/to/cadaclysm-sdk
-> ```
->
-> `--pkg path/to/pkg` takes a local build's `pkg/` folder instead of a zip. `--sdk` takes an
-> SDK checkout (its `python/` and `schemas/` folders).
+```bash
+npm run setup -- --zip path/to/cadaclysm-0.14.0-web-pro.zip --sdk path/to/cadaclysm-sdk
+```
+
+`--pkg path/to/pkg` takes a local build's `pkg/` folder instead of a zip. `--sdk` takes an
+SDK checkout (its `python/` and `schemas/` folders).
 
 `npm run build` bundles CodeMirror into `vendor/editor.js`.
 
