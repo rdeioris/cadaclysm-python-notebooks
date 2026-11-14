@@ -21,9 +21,9 @@ import { fileURLToPath } from "node:url";
 import { unzipSync } from "fflate";
 
 // The notebook needs the View class and the Pyodide side of cadaclysm_blacksmith.py, which
-// the SDK has from 0.14 on, and the kernel: the pro web package.
-const VERSION = "0.14.0";
-const ASSET = `cadaclysm-${VERSION}-web-pro.zip`;
+// the SDK has from 0.14 on, and the kernel: the web package's pkg/ has all three.
+const VERSION = "0.14.2";
+const ASSET = `cadaclysm-${VERSION}-web.zip`;
 const URL = `https://github.com/rdeioris/cadaclysm-sdk/releases/download/v${VERSION}/${ASSET}`;
 const SDK = `https://raw.githubusercontent.com/rdeioris/cadaclysm-sdk/v${VERSION}`;
 // What the notebook loads from the package: the module, and the page modules beside view.js

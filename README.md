@@ -112,7 +112,7 @@ The notebook needs the `View` class and its page modules, and the Pyodide side o
 `cadaclysm_blacksmith.py`. The SDK has them from 0.14 on. Copies you already have work too:
 
 ```bash
-npm run setup -- --zip path/to/cadaclysm-0.14.0-web-pro.zip --sdk path/to/cadaclysm-sdk
+npm run setup -- --zip path/to/cadaclysm-0.14.2-web.zip --sdk path/to/cadaclysm-sdk
 ```
 
 `--pkg path/to/pkg` takes a local build's `pkg/` folder instead of a zip. `--sdk` takes an
